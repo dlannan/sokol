@@ -28,7 +28,7 @@ jobs:
           with:
             name: Linux sokol
             path: |
-              ./bin/sokol_dll.so \
+              ./bin/sokol_dll.so 
               ./bin/sokol_shape_dll.so
     build-windows:
       runs-on: windows-latest
@@ -44,7 +44,7 @@ jobs:
           with:
             name: Windows sokol
             path: |
-              ./bin/sokol_dll.dll \
+              ./bin/sokol_dll.dll 
               ./bin/sokol_shape_dll.dll
     build-macos:
       runs-on: macos-latest
@@ -58,7 +58,7 @@ jobs:
           with:
             name: macOS sokol
             path: |
-              ./bin/sokol_dll_macos.so \
+              ./bin/sokol_dll_macos.so 
               ./bin/sokol_shape_dll_macos.so
     build-ios64:
       runs-on: macos-latest
@@ -72,7 +72,7 @@ jobs:
           with:
             name: ios64 sokol
             path: |
-              ./bin/sokol_dll_ios64.so \
+              ./bin/sokol_dll_ios64.so 
               ./bin/sokol_shape_dll_ios64.so
     build-android:
       runs-on: ubuntu-latest
