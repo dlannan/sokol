@@ -7,9 +7,9 @@ echo "Building for platform ${PLATFORM}"
 if [ "${PLATFORM}" = "linux" ]; then
     gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll.so -lpthread -ldl -lm 
 elif [ "${PLATFORM}" = "macosx" ]; then
-    gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll_macos.so -lpthread -ldl -lm 
+    gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DTARGET_OS_IPHONE -D__APPLE__ -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll_macos.so -lpthread -ldl -lm 
 elif [ "${PLATFORM}" = "ios64" ]; then
-    gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll_ios64.so -lpthread -ldl -lm 
+    gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -D__APPLE__ -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll_ios64.so -lpthread -ldl -lm 
 elif [ "${PLATFORM}" = "android" ]; then
     export PATH="android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/:$PATH"
     export PATH="android-ndk/toolchains/llvm/prebuilt/linux-x86_64/:$PATH"
