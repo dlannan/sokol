@@ -1,0 +1,88 @@
+name: "sokol-shared"
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+    build-linux:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Build sokol lib for Linux
+          run: |
+            ./build-sokol.sh linux
+        
+        - name: Archive results
+          uses: actions/upload-artifact@v3
+          with:
+            name: Linux sokol
+            path: |
+              ./sokol-dll.so
+    build-windows:
+      runs-on: windows-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: ilammy/msvc-dev-cmd@v1.4.1
+        - name: Build sokol lib for Win64
+          run: ./build-sokol.sh win64
+          shell: bash
+           
+        - name: Archive results
+          uses: actions/upload-artifact@v3
+          with:
+            name: Windows sokol
+            path: |
+              ./sokol-dll.dll
+    build-macos:
+      runs-on: macos-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Build sokol lib for macos
+          run: ./build-sokol.sh macosx
+              
+        - name: Archive results
+          uses: actions/upload-artifact@v3
+          with:
+            name: macOS sokol
+            path: |
+              ./sokol-dll.so
+    build-ios64:
+      runs-on: macos-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Build sokol lib for iosarm64
+          run: ./build-sokol.sh ios64
+              
+        - name: Archive results
+          uses: actions/upload-artifact@v3
+          with:
+            name: ios64 sokol
+            path: |
+              ./sokol-dll.so
+    build-android:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Fetch NDK
+          run: wget https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
+        - name: Install arm compiler
+          run: unzip android-ndk-r25b-linux.zip
+        - name: Rename folder for generic ndk use
+          run: mv android-ndk-r25b android-ndk
+        - name: Build sokol lib for android
+          run: ./build-sokol.sh android
+              
+        - name: Archive results
+          uses: actions/upload-artifact@v3
+          with:
+            name: android sokol
+            path: |
+              ./sokol-dll-aarch64.so   
+        - name: Archive armv7 results
+          uses: actions/upload-artifact@v3
+          with:
+            name: android sokol
+            path: |
+              ./sokol-dll-armv7.so   
