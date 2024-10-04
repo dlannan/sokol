@@ -6,7 +6,7 @@ echo "Building for platform ${PLATFORM}"
 
 if [ "${PLATFORM}" = "linux" ]; then
     gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll.so -lpthread -ldl -lm 
-    gcc -c -I./ -I./util -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-shapoe-dll.c -o ./bin/sokol_shape_dll.so -lpthread -ldl -lm 
+    gcc -c -I./ -I./util -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-shape-dll.c -o ./bin/sokol_shape_dll.so -lpthread -ldl -lm 
 elif [ "${PLATFORM}" = "macosx" ]; then
     g++ -c -xobjective-c++ -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DTARGET_OS_IPHONE -D__APPLE__ -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll_macos.so -lpthread -ldl -lm 
     g++ -c -xobjective-c++ -I./ -I./util -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DTARGET_OS_IPHONE -D__APPLE__ -DSOKOL_GLCORE lib/sokol-shape-dll.c -o ./bin/sokol_shape_dll_macos.so -lpthread -ldl -lm 
