@@ -24,7 +24,7 @@ jobs:
             ./build-sokol.sh linux
         
         - name: Archive results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: Linux sokol
             path: |
@@ -32,14 +32,14 @@ jobs:
     build-windows:
       runs-on: windows-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - uses: ilammy/msvc-dev-cmd@v1.4.1
         - name: Build sokol lib for Win64
           run: ./build-sokol.bat
           shell: bash
            
         - name: Archive results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: Windows sokol
             path: |
@@ -47,12 +47,12 @@ jobs:
     build-macos:
       runs-on: macos-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Build sokol lib for macos
           run: ./build-sokol.sh macosx
               
         - name: Archive results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: macOS sokol
             path: |
@@ -60,12 +60,12 @@ jobs:
     build-ios64:
       runs-on: macos-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Build sokol lib for iosarm64
           run: ./build-sokol.sh ios64
               
         - name: Archive results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: ios64 sokol
             path: |
@@ -73,7 +73,7 @@ jobs:
     build-android:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Fetch NDK
           run: wget https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
         - name: Install arm compiler
@@ -84,13 +84,13 @@ jobs:
           run: ./build-sokol.sh android
               
         - name: Archive results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: android sokol
             path: |
               ./bin/sokol_dll_aarch64.so   
         - name: Archive armv7 results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: android sokol
             path: |
