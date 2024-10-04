@@ -9,7 +9,18 @@ jobs:
     build-linux:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - name: Install Dependencies
+          run: |
+            sudo apt update
+            sudo apt install -y libxrandr-dev \
+              libgles2-mesa-dev mesa-common-dev libgl1-mesa-dev mesa-vulkan-drivers \
+              libfreetype6-dev libpugixml-dev libassimp-dev libbullet-dev qtbase5-dev cargo \
+              nvidia-cg-dev glslang-dev spirv-tools spirv-headers libvulkan-volk-dev \
+              swig4.0 mono-mcs python3-dev \
+              python3-lxml texlive-binaries texlive-base graphviz doxygen
+        - uses: actions/checkout@v4
+          with:
+            fetch-depth: 2
         - name: Build sokol lib for Linux
           run: |
             ./build-sokol.sh linux
