@@ -5,7 +5,7 @@ PLATFORM=$1
 echo "Building for platform ${PLATFORM}"
 
 if [ "${PLATFORM}" = "win64" ]; then
-    cl /DSOKOL_GLCORE lib\sokol-dll.c /link /DLL /Fe:bin\sokol_dll.dll
+    cl /D:SOKOL_GLCORE lib\sokol-dll.c /link /DLL /Fe:bin\sokol_dll.dll
 elif [ "${PLATFORM}" = "linux" ]; then
     gcc -c -I./ -I/usr/include -L/usr/include -I/usr/local/include -L/usr/local/include -DSOKOL_GLCORE lib/sokol-dll.c -o ./bin/sokol_dll.so -lpthread -ldl -lm 
 elif [ "${PLATFORM}" = "macosx" ]; then
