@@ -35,7 +35,7 @@ jobs:
         - uses: actions/checkout@v2
         - uses: ilammy/msvc-dev-cmd@v1.4.1
         - name: Build sokol lib for Win64
-          run: ./build-sokol.sh win64
+          run: ./build-sokol.bat
           shell: bash
            
         - name: Archive results
