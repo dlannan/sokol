@@ -264,14 +264,10 @@ extern "C"
 {
 #endif
 
-#ifdef HANDMADE_MATH_STATIC
-#define HMMDEF static
-#else
 #ifdef defined(_WINDLL)
 #define HMMDEF __declspec(dllexport)
 #else
 #define HMMDEF extern 
-#endif
 #endif
 
 #ifdef HANDMADE_MATH_NO_INLINE
