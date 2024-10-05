@@ -9,3 +9,6 @@
 #include "sokol_fetch.h"
 #include "sokol_log.h"
 #include "sokol_glue.h"
+
+#define SOKOL_SHAPE_IMPL
+#include "sokol_shape.h"
