@@ -30,7 +30,7 @@ jobs:
             path: |
               ./bin/sokol_dll.so 
               ./bin/sokol_shape_dll.so
-              ./bin/hmmv_dll.so
+              ./bin/hmm_dll.so
     build-windows:
       runs-on: windows-latest
       steps:
@@ -47,7 +47,7 @@ jobs:
             path: |
               ./bin/sokol_dll.dll 
               ./bin/sokol_shape_dll.dll
-              ./bin/hmmv_dll.dll
+              ./bin/hmm_dll.dll
     build-macos:
       runs-on: macos-latest
       steps:
@@ -62,7 +62,7 @@ jobs:
             path: |
               ./bin/sokol_dll_macos.so 
               ./bin/sokol_shape_dll_macos.so
-              ./bin/hmmv_dll_macos.so
+              ./bin/hmm_dll_macos.so
     build-ios64:
       runs-on: macos-latest
       steps:
@@ -77,7 +77,7 @@ jobs:
             path: |
               ./bin/sokol_dll_ios64.so 
               ./bin/sokol_shape_dll_ios64.so
-              ./bin/hmmv_dll_ios64.so
+              ./bin/hmm_dll_ios64.so
     build-android:
       runs-on: ubuntu-latest
       steps:
