@@ -267,7 +267,7 @@ extern "C"
 #ifdef HANDMADE_MATH_STATIC
 #define HMMDEF static
 #else
-#ifdef defined(_WIN32)
+#ifdef defined(D_WINDLL)
 #define HMMDEF __declspec(dllexport)
 #else
 #define HMMDEF extern 
