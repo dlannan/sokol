@@ -264,7 +264,7 @@ extern "C"
 {
 #endif
 
-#ifdef defined(_WINDLL)
+#ifdef _WINDLL
 #define HMMDEF __declspec(dllexport)
 #else
 #define HMMDEF extern 
