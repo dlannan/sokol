@@ -29,6 +29,7 @@ jobs:
             name: Linux sokol
             path: |
               ./bin/sokol_dll.so 
+              ./bin/sokol_debug_dll.so 
               ./bin/sokol_shape_dll.so
               ./bin/hmm_dll.so
     build-windows:
@@ -46,6 +47,7 @@ jobs:
             name: Windows sokol
             path: |
               ./bin/sokol_dll.dll 
+              ./bin/sokol_debug_dll.dll
               ./bin/sokol_shape_dll.dll
               ./bin/hmm_dll.dll
     build-macos:
@@ -61,6 +63,7 @@ jobs:
             name: macOS sokol
             path: |
               ./bin/sokol_dll_macos.so 
+              ./bin/sokol_debug_dll_macos.so 
               ./bin/sokol_shape_dll_macos.so
               ./bin/hmm_dll_macos.so
     build-ios64:
@@ -76,6 +79,7 @@ jobs:
             name: ios64 sokol
             path: |
               ./bin/sokol_dll_ios64.so 
+              ./bin/sokol_debug_dll_ios64.so 
               ./bin/sokol_shape_dll_ios64.so
               ./bin/hmm_dll_ios64.so
     build-android:
