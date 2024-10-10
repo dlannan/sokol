@@ -261,14 +261,22 @@ extern "C" {
       #define NK_API static
     #endif
   #else
-    #define NK_API extern
+    #ifdef _MSC_VER
+        #define NK_API extern __declspec(dllexport)
+    #else
+        #define NK_API extern
+    #endif    
   #endif
 #endif
 #ifndef NK_LIB
   #ifdef NK_SINGLE_FILE
     #define NK_LIB static
   #else
-    #define NK_LIB extern
+    #ifdef _MSC_VER
+        #define NK_LIB __declspec(dllexport)
+    #else
+        #define NK_LIB extern
+    #endif 
   #endif
 #endif
 
