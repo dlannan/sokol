@@ -2879,7 +2879,8 @@ NK_API void nk_group_set_scroll(struct nk_context*, const char *id, nk_uint x_of
 ///
 /// Returns `true(1)` if visible and fillable with widgets or `false(0)` otherwise
 */
-#define nk_tree_push(ctx, type, title, state) nk_tree_push_hashed(ctx, type, title, state, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),__LINE__)
+//#define nk_tree_push(ctx, type, title, state) nk_tree_push_hashed(ctx, type, title, state, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),__LINE__)
+NK_API nk_bool nk_tree_push(struct nk_context*ctx, enum nk_tree_type type, const char *title, enum nk_collapse_states initial_state);
 /*/// #### nk_tree_push_id
 /// Starts a collapsable UI section with internal state management callable in a look
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
@@ -2896,7 +2897,8 @@ NK_API void nk_group_set_scroll(struct nk_context*, const char *id, nk_uint x_of
 ///
 /// Returns `true(1)` if visible and fillable with widgets or `false(0)` otherwise
 */
-#define nk_tree_push_id(ctx, type, title, state, id) nk_tree_push_hashed(ctx, type, title, state, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),id)
+//#define nk_tree_push_id(ctx, type, title, state, id) nk_tree_push_hashed(ctx, type, title, state, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),id)
+NK_API nk_bool nk_tree_push_id(struct nk_context* ctx, enum nk_tree_type type, const char *title, enum nk_collapse_states initial_state, int seed);
 /*/// #### nk_tree_push_hashed
 /// Start a collapsable UI section with internal state management with full
 /// control over internal unique ID used to store state
@@ -3037,8 +3039,12 @@ NK_API nk_bool nk_tree_state_image_push(struct nk_context*, enum nk_tree_type, s
 */
 NK_API void nk_tree_state_pop(struct nk_context*);
 
-#define nk_tree_element_push(ctx, type, title, state, sel) nk_tree_element_push_hashed(ctx, type, title, state, sel, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),__LINE__)
-#define nk_tree_element_push_id(ctx, type, title, state, sel, id) nk_tree_element_push_hashed(ctx, type, title, state, sel, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),id)
+//#define nk_tree_element_push(ctx, type, title, state, sel) nk_tree_element_push_hashed(ctx, type, title, state, sel, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),__LINE__)
+NK_API nk_bool nk_tree_element_push(struct nk_context*, enum nk_tree_type, const char *title, enum nk_collapse_states initial_state, nk_bool *selected);
+
+//#define nk_tree_element_push_id(ctx, type, title, state, sel, id) nk_tree_element_push_hashed(ctx, type, title, state, sel, NK_FILE_LINE,nk_strlen(NK_FILE_LINE),id)
+NK_API nk_bool nk_tree_element_push_id(struct nk_context*, enum nk_tree_type, const char *title, enum nk_collapse_states initial_state, nk_bool *selected, int seed);
+
 NK_API nk_bool nk_tree_element_push_hashed(struct nk_context*, enum nk_tree_type, const char *title, enum nk_collapse_states initial_state, nk_bool *selected, const char *hash, int len, int seed);
 NK_API nk_bool nk_tree_element_image_push_hashed(struct nk_context*, enum nk_tree_type, struct nk_image, const char *title, enum nk_collapse_states initial_state, nk_bool *selected, const char *hash, int len,int seed);
 NK_API void nk_tree_element_pop(struct nk_context*);
