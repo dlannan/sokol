@@ -270,7 +270,11 @@ extern "C" {
 #endif
 #ifndef NK_LIB
   #ifdef NK_SINGLE_FILE
-    #define NK_LIB static
+    #ifdef _MSC_VER
+        #define NK_LIB __declspec(dllexport)
+    #else  
+        #define NK_LIB static
+    #endif
   #else
     #ifdef _MSC_VER
         #define NK_LIB __declspec(dllexport)
