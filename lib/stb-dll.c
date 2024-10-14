@@ -1,8 +1,8 @@
 #if defined(_WINDLL) 
-#define STBIDEF __declspec(dllimport)
-#define STBIRDEF __declspec(dllimport)
-#define STBIWDEF __declspec(dllimport)
-#define STBTT_DEF __declspec(dllimport)
+#define STBIDEF __declspec(dllexport)
+#define STBIRDEF __declspec(dllexport)
+#define STBIWDEF __declspec(dllexport)
+#define STBTT_DEF __declspec(dllexport)
 #else
 #define STBIDEF extern
 #define STBIRDEF extern
