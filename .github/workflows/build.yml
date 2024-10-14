@@ -34,6 +34,7 @@ jobs:
               ./bin/sokol_nuklear_dll.so
               ./bin/sokol_imgui_dll.so
               ./bin/hmm_dll.so
+              ./bin/stb_dll.so
     build-windows:
       runs-on: windows-latest
       steps:
@@ -54,6 +55,7 @@ jobs:
               ./bin/sokol_nuklear_dll.dll
               ./bin/sokol_imgui_dll.dll
               ./bin/hmm_dll.dll
+              ./bin/stb_dll.dll
     build-macos:
       runs-on: macos-latest
       steps:
@@ -72,6 +74,7 @@ jobs:
               ./bin/sokol_nuklear_dll_macos.so
               ./bin/sokol_imgui_dll_macos.so
               ./bin/hmm_dll_macos.so
+              ./bin/stb_dll_macos.so
     build-ios64:
       runs-on: macos-latest
       steps:
@@ -90,6 +93,7 @@ jobs:
               ./bin/sokol_nuklear_dll_ios64.so
               ./bin/sokol_imgui_dll_ios64.so
               ./bin/hmm_dll_ios64.so
+              ./bin/stb_dll_ios64.so
     build-android:
       runs-on: ubuntu-latest
       steps:
