@@ -1,4 +1,4 @@
-#if defined(_WIN32) 
+#if defined(_WINDLL) 
 #define STBIDEF __declspec(dllimport)
 #define STBIRDEF __declspec(dllimport)
 #define STBIWDEF __declspec(dllimport)
