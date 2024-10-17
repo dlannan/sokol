@@ -33,6 +33,7 @@ jobs:
               ./bin/sokol_shape_dll.so
               ./bin/sokol_nuklear_dll.so
               ./bin/hmm_dll.so
+              ./bin/remotery_dll.so
               ./bin/stb_dll.so
     build-windows:
       runs-on: windows-latest
@@ -53,6 +54,7 @@ jobs:
               ./bin/sokol_shape_dll.dll
               ./bin/sokol_nuklear_dll.dll
               ./bin/hmm_dll.dll
+              ./bin/remotery_dll.dll
               ./bin/stb_dll.dll
     build-macos:
       runs-on: macos-latest
@@ -71,6 +73,7 @@ jobs:
               ./bin/sokol_shape_dll_macos.so
               ./bin/sokol_nuklear_dll_macos.so
               ./bin/hmm_dll_macos.so
+              ./bin/remotery_dll_macos.so
               ./bin/stb_dll_macos.so
     build-ios64:
       runs-on: macos-latest
@@ -89,6 +92,7 @@ jobs:
               ./bin/sokol_shape_dll_ios64.so
               ./bin/sokol_nuklear_dll_ios64.so
               ./bin/hmm_dll_ios64.so
+              ./bin/remotery_dll_ios64.so
               ./bin/stb_dll_ios64.so
     build-android:
       runs-on: ubuntu-latest
