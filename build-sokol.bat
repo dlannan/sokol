@@ -21,6 +21,8 @@ call cl.exe /Ilib\nuklear %BASE_INCLUDE% %DEFS% /Fe:bin\sokol_nuklear_dll.dll li
 
 call cl.exe %BASE_INCLUDE% %DEFS% /Fe:bin\hmm_dll.dll lib\hmm-dll.c %LINK_FLAGS%
 
+call cl.exe /Ilib\remotery %BASE_INCLUDE% %DEFS% /DRMT_DLL /Fe:bin\remotery_dll.dll lib\remotery\Remotery.c %LINK_FLAGS%
+
 call cl.exe /Ilib/stb %BASE_INCLUDE% %DEFS% /Fe:bin\stb_dll.dll lib\stb-dll.c %LINK_FLAGS%
 
 del *.obj
