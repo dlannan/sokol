@@ -57,6 +57,7 @@
     @PROPERTIES:    Property API
 */
 
+#define RMT_USE_OPENGL      1
 #define RMT_IMPL
 #include "Remotery.h"
 
